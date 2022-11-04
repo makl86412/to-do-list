@@ -1,0 +1,40 @@
+<router-outlet></router-outlet>
+
+<div class="container-fluid abc">
+
+  <h2>TODO LIST</h2>
+  <form [formGroup]="addItemsForm">
+
+    <span class="form-group">
+      <input formControlName="items" placeholder="Enter Items" type="text" class="form-control">
+
+      <button (click)="onSubmit()" type="submit"><mat-icon   fontIcon="add_circle"></mat-icon></button>
+      <button  type="submit"><mat-icon   fontIcon="edit"></mat-icon></button>
+    </span>
+  </form>
+</div>
+<table>
+
+  
+
+  <tbody>
+    <tr  *ngFor="let list of listing">
+      <td>
+        {{list.items}}
+      
+        <button class="btn" >
+          <mat-icon fontIcon="done"></mat-icon>
+        </button>
+        <button >
+          <mat-icon fontIcon="edit"></mat-icon>
+        </button>
+        <button >
+          <mat-icon  fontIcon="delete"></mat-icon>
+        </button>
+      </td>
+
+    </tr>
+
+  </tbody>
+
+</table>
